@@ -16,7 +16,8 @@ st.set_page_config(
 
 # Conexión con Supabase
 load_dotenv()
-sb = create_client(os.getenv("SUPABASE_URL"), os.getenv("SUPABASE_KEY"))
+#sb = create_client(os.getenv("SUPABASE_URL"), os.getenv("SUPABASE_KEY"))
+sb = create_client(st.secrets["supabase"]["SUPABASE_URL"],st.secrets["supabase"]["SUPABASE_KEY"])
 
 # Función para cargar datos
 @st.cache_data(ttl=300)
